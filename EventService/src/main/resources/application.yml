@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: EventService
+  datasource:
+    url: jdbc:mysql://localhost:3306/event
+    username: root
+    password: Bannu@123
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
